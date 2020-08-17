@@ -1,15 +1,11 @@
 package gent.springframework.controllers.v1;
 
 
-import gent.springframework.api.v1.model.CategoryDTO;
-import gent.springframework.api.v1.model.CategoryListDTO;
 import gent.springframework.api.v1.model.CustomerDTO;
 import gent.springframework.api.v1.model.CustomerListDTO;
-import gent.springframework.domain.Customer;
 import gent.springframework.services.CustomerService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,6 +20,7 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @ApiOperation(value = "This will get a list of  customers" , notes = "These are some notes")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public CustomerListDTO getAllCustomers(){

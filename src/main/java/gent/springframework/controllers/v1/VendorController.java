@@ -3,6 +3,7 @@ package gent.springframework.controllers.v1;
 import gent.springframework.api.v1.model.VendorDTO;
 import gent.springframework.api.v1.model.VendorListDTO;
 import gent.springframework.services.VendorService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,7 @@ public class VendorController {
     }
 
 
+    @ApiOperation(value = "This will get a vendor by its id" , notes = "U must write a LONG TYPE for id")
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public VendorDTO getVendorById(@PathVariable Long id ){
